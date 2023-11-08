@@ -1,7 +1,9 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:social_user_generator/screens/service_generate_screen.dart';
+import 'package:social_user_generator/utils/ads.dart';
 import 'package:social_user_generator/utils/config.dart';
 import 'package:social_user_generator/utils/extensions.dart';
 
@@ -17,14 +19,16 @@ class SocialUsernameGeneratorScreenState
     extends State<SocialUsernameGeneratorScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(Config.appTitle),
-        backgroundColor: Colors.blue,
-        centerTitle: true,
+    return DoublePressBackWidget(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(Config.appTitle),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
+        drawer: _appDrawer(),
+        body: _appSocialBtns(),
       ),
-      drawer: _appDrawer(),
-      body: _appSocialBtns(),
     );
   }
 
@@ -46,29 +50,26 @@ class SocialUsernameGeneratorScreenState
           begin: const Offset(0, -0.1),
           end: Offset.zero,
         ).animate(animation),
-        child: Container(
-          // color: Colors.primaries.getRandomElement(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(icon),
-                onPressed: () {
-                  ServiceGenerateScreen(service: service).launch(context,
-                      pageRouteAnimation:
-                          PageRouteAnimation.values.getRandomElement());
-                },
-                iconSize: 48.0,
-                color: color, // Set the button icon color
-              ),
-              const SizedBox(height: 8.0),
-              Text(
-                text,
-                style: TextStyle(color: color), // Set the button text color
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(icon),
+              onPressed: () {
+                ServiceGenerateScreen(service: service).launch(context,
+                    pageRouteAnimation:
+                        PageRouteAnimation.values.getRandomElement());
+              },
+              iconSize: 48.0,
+              color: color, // Set the button icon color
+            ),
+            const SizedBox(height: 8.0),
+            Text(
+              text,
+              style: TextStyle(color: color), // Set the button text color
+            ),
+          ],
         ),
       ),
     );
@@ -81,13 +82,18 @@ class SocialUsernameGeneratorScreenState
         child: Column(
           children: [
             DrawerHeader(
-                decoration: const BoxDecoration(color: Colors.purple),
-                child: Container(
-                  height: 200,
-                )),
+              margin: EdgeInsets.zero,
+              padding: EdgeInsets.zero,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/cover.jpg"),
+                    fit: BoxFit.cover),
+              ),
+              child: Container(height: 200),
+            ),
             Expanded(
               child: LiveList(
-                delay:  Duration.zero,
+                delay: Duration.zero,
                 showItemInterval: const Duration(milliseconds: 200),
                 showItemDuration: const Duration(milliseconds: 200),
                 itemBuilder: (BuildContext context, int index,
@@ -105,7 +111,7 @@ class SocialUsernameGeneratorScreenState
     );
   }
 
-  Widget _drawerItem(String title, IconData icon, VoidCallback onTap,
+  Widget _drawerItem(String title, IconData icon, Function(BuildContext) onTap,
       Animation<double> animation) {
     return FadeTransition(
       opacity: Tween<double>(
@@ -128,7 +134,9 @@ class SocialUsernameGeneratorScreenState
             icon,
             color: Colors.white, // Set the icon color
           ),
-          onTap: onTap,
+          onTap: () {
+            onTap(context);
+          },
         ),
       ),
     );
@@ -136,24 +144,37 @@ class SocialUsernameGeneratorScreenState
 
   _appSocialBtns() {
     return Center(
-      child: LiveGrid(
-        padding: const EdgeInsets.only(top: 0),
-        delay: const Duration(seconds: 1),
-        showItemInterval: const Duration(milliseconds: 400),
-        itemBuilder:
-            (BuildContext context, int index, Animation<double> animation) {
-          var btn = Config.socialBtns.elementAt(index);
-          return _buildSocialButton(
-              btn["title"], btn["icon"], btn["name"], btn["color"], animation);
-        },
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 0,
-          mainAxisSpacing: 0,
-          childAspectRatio: 1,
-          mainAxisExtent: 150,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            16.height,
+            adBanner(),
+            16.height,
+            LiveGrid(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.only(top: 0),
+              showItemInterval: const Duration(milliseconds: 400),
+              itemBuilder:
+                  (BuildContext context, int index, Animation<double> animation) {
+                var btn = Config.socialBtns.elementAt(index);
+                return _buildSocialButton(
+                    btn["title"], btn["icon"], btn["name"], btn["color"], animation);
+              },
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 0,
+                mainAxisSpacing: 0,
+                childAspectRatio: 1,
+                mainAxisExtent: 150,
+              ),
+              itemCount: Config.socialBtns.length,
+            ),
+            16.height,
+            adBanner(size: AdSize.mediumRectangle),
+            20.height,
+          ],
         ),
-        itemCount: Config.socialBtns.length,
       ),
     );
   }

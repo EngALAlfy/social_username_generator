@@ -7,3 +7,11 @@ extension ListExtensions<T> on List<T> {
     return this[random.nextInt(length)];
   }
 }
+
+extension LtringExtensions on String {
+  String getRandomChar() {
+    if (isEmpty) return "";
+    Random random = Random();
+    return this[random.nextInt(length)];
+  }
+}
