@@ -84,13 +84,12 @@ class SocialUsernameGeneratorScreenState
             DrawerHeader(
               margin: EdgeInsets.zero,
               padding: EdgeInsets.zero,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/cover.jpg"),
-                    fit: BoxFit.cover),
+              child: SizedBox(
+                height: 200,
+                child: Image.asset("assets/images/logo.png" , height: 100,width: 100),
               ),
-              child: Container(height: 200),
             ),
+            const Divider(thickness: 1.5,endIndent: 20,indent: 20),
             Expanded(
               child: LiveList(
                 delay: Duration.zero,
@@ -155,11 +154,11 @@ class SocialUsernameGeneratorScreenState
               physics: const NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.only(top: 0),
               showItemInterval: const Duration(milliseconds: 400),
-              itemBuilder:
-                  (BuildContext context, int index, Animation<double> animation) {
+              itemBuilder: (BuildContext context, int index,
+                  Animation<double> animation) {
                 var btn = Config.socialBtns.elementAt(index);
-                return _buildSocialButton(
-                    btn["title"], btn["icon"], btn["name"], btn["color"], animation);
+                return _buildSocialButton(btn["title"], btn["icon"],
+                    btn["name"], btn["color"], animation);
               },
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

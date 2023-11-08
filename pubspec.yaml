@@ -43,20 +43,20 @@ dependencies:
   auto_animated: ^3.2.0
   in_app_review:
   share:
+  flutter_markdown:
   webview_flutter:
   http:
   google_mobile_ads:
+  flutter_native_splash: ^2.3.5
+
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  flutter_markdown:
+  flutter_launcher_icons: ^0.13.1
 
+flutter_launcher_icons:
+  android: "ic_launcher"
+  image_path: "assets/images/logo.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
