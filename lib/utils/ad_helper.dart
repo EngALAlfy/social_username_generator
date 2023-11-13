@@ -4,16 +4,16 @@ import 'package:flutter/foundation.dart';
 
 class ADHelper{
 
-  static const String _appIdAndroid = "ca-app-pub-4819873718844109~8942786256";
+  static const String _appIdAndroid = "ca-app-pub-6430891509102679~8319688193";
   static const String _appIdIOS = "ca-app-pub-4819873718844109~1515722377";
 
   static const String _adRewardAndroidDebug = "ca-app-pub-3940256099942544/5224354917";
   static const String _adFullAndroidDebug = "ca-app-pub-3940256099942544/1033173712";
   static const String _adBannerAndroidDebug = "ca-app-pub-3940256099942544/6300978111";
 
-  static const String _adRewardAndroid = "ca-app-pub-4819873718844109/8097866963";
-  static const String _adFullAndroid = "ca-app-pub-4819873718844109/9035544119" ;
-  static const String _adBannerAndroid = "ca-app-pub-4819873718844109/9516273309";
+  static const String _adRewardAndroid = "ca-app-pub-6430891509102679/1024486257";
+  static const String _adFullAndroid = "ca-app-pub-6430891509102679/4800079730" ;
+  static const String _adBannerAndroid = "ca-app-pub-6430891509102679/5990954042";
 
   static const String _adRewardIOSDebug = "ca-app-pub-3940256099942544/1712485313";
   static const String _adFullIOSDebug = "ca-app-pub-3940256099942544/4411468910";

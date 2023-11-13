@@ -8,10 +8,15 @@ extension ListExtensions<T> on List<T> {
   }
 }
 
-extension LtringExtensions on String {
+extension StringExtensions on String {
   String getRandomChar() {
     if (isEmpty) return "";
     Random random = Random();
     return this[random.nextInt(length)];
   }
+}
+
+extension MapExtensions on Map {
+  bool get isNotEmptyOrNull => this != null && this!.isNotEmpty;
+
 }

@@ -6,7 +6,7 @@ import 'package:social_user_generator/utils/config.dart';
 import 'package:social_user_generator/utils/toast_widget.dart';
 
 class ResultScreen extends StatefulWidget {
-  final List<String> result;
+  final List<Map<String , bool>> result;
   final String service;
 
   const ResultScreen({super.key, required this.result, required this.service});
@@ -24,7 +24,13 @@ class _ResultScreenState extends State<ResultScreen> {
         title: Text("${Config.resultScreenTitle} ${widget.service.toUpperCase()}"),
       ),
       body: LiveList(
-        separatorBuilder: (context, index) => adBanner(),
+        separatorBuilder: (context, index) {
+          if(index == 1 || index == 3){
+            return adBanner();
+          }
+
+          return const SizedBox();
+        },
         padding: const EdgeInsets.only(top: 0),
         showItemInterval: const Duration(milliseconds: 400),
         itemCount: widget.result.length,
@@ -48,7 +54,7 @@ class _ResultScreenState extends State<ResultScreen> {
     );
   }
 
-  Widget _buildResultTile(String username) {
+  Widget _buildResultTile(Map<String , dynamic> username) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       child: Container(
@@ -72,14 +78,22 @@ class _ResultScreenState extends State<ResultScreen> {
               children: [
                 Expanded(
                   child: DottedBorderWidget(
+                    // color: username.values.first == true ? Colors.green : Colors.red,
                     gap: 10,
-                    child: Text(
-                      username,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // Icon(username.values.first == true ? Icons.check : Icons.close_sharp , color: username.values.first == true ? Colors.green : Colors.red ,size: 30),
+                        Text(
+                          username.keys.first,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -91,7 +105,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: () async {
-                      await username.copyToClipboard();
+                      await username.keys.first.copyToClipboard();
                       if (!context.mounted) return;
                       ToastWidget.showToast(context: context, text: Config.usernameCopied);
                     },
@@ -112,7 +126,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       try{
                         adFull();
                         List<String> usernames = getStringListAsync("usernames") ?? [];
-                        usernames.add(username);
+                        usernames.add(username.keys.first);
                         // check if username is exist
                         usernames = usernames.toSet().toList();
                         await setValue("usernames" , usernames);

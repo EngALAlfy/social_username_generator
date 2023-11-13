@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:social_user_generator/utils/ad_helper.dart';
 
 Widget adBanner({size = AdSize.banner}) {
+  if(defaultTargetPlatform != TargetPlatform.android && defaultTargetPlatform != TargetPlatform.iOS){
+    return const SizedBox();
+  }
   // make ad object
   final BannerAd myBanner = BannerAd(
     adUnitId: ADHelper.adBanner(),
@@ -72,4 +76,17 @@ adFull() {
   );
 
 
+}
+
+showFullAds() async {
+  int adShowCount = getIntAsync("adShowCount" , defaultValue: 0);
+  if(adShowCount >= 5){
+    adReward((){});
+    adShowCount = 0;
+  }else if(adShowCount == 3){
+    adFull();
+  }
+  adShowCount++;
+  await setValue("adShowCount", adShowCount);
+  debugPrint("adShowCount :: $adShowCount");
 }
