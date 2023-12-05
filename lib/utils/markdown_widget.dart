@@ -23,7 +23,7 @@ class MarkdownWidget extends StatelessWidget {
             }),
             builder: (context, snapshot) {
               if(snapshot.hasError){
-                return const Text(Config.errorHappened , style: TextStyle(fontSize: 19),);
+                return  Text(Config.errorHappened , style: TextStyle(fontSize: 19),);
               }
 
               if (snapshot.hasData) {

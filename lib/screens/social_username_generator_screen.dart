@@ -22,7 +22,7 @@ class SocialUsernameGeneratorScreenState
     return DoublePressBackWidget(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(Config.appTitle),
+          title: Text(Config.appTitle),
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),

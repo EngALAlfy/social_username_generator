@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,24 +14,7 @@ class Config {
   static String baseApiUrl = "https://social-generate.almorbeh.com/api";
 
   /// Strings in the app
-  static const String appTitle = "تخمين يوزرات انستا، تويتر، سناب";
-
-  /// main screen
-  static const String facebook = "فيسبوك";
-  static const String instagram = "انستجرام";
-  static const String tiktok = "تيك توك";
-  static const String twitter = "تويتر";
-  static const String youtube = "يوتيوب";
-  static const String snapchat = "سناب شات";
-
-  /// drawer
-  static const String share = "مشاركة التطبيق";
-  static const String privacy = "سياسة الخصوصية";
-  static const String exit = "خروج";
-  static const String rate = "تقييم التطبيق";
-  static const String about = "حول التطبيق";
-  static const String saved = "المحفوظات";
-  static const String terms = "الشروط والاحكام";
+  static String appTitle = "app_title".tr();
 
   /// lists
   static List<Map<String, dynamic>> drawerItems = [
@@ -62,7 +46,7 @@ class Config {
       'callback': (BuildContext context) {
         showInDialog(
           context,
-          title: const Text(Config.terms),
+          title: Text(Config.terms),
           builder: (_) => MarkdownWidget(mdFileName: "terms.md"),
         );
       },
@@ -73,7 +57,7 @@ class Config {
       'callback': (BuildContext context) {
         showInDialog(
           context,
-          title: const Text(Config.about),
+          title: Text(Config.about),
           builder: (_) => MarkdownWidget(mdFileName: "about.md"),
         );
       },
@@ -107,7 +91,7 @@ class Config {
     },
   ];
 
-  static const List socialBtns = [
+  static List socialBtns = [
     {
       "name": "facebook",
       "title": Config.facebook,
@@ -146,35 +130,49 @@ class Config {
     },
   ];
 
-  /// generator screen
-  static const String enterCustomWord = "ادخل كلمة خاصة";
-  static const String generateScreenTitle = "توليد يوزر لــ ";
-  static const String usernameLength = "طول اليوزر نيم";
-  static const String includeNumbers = "تضمين ارقام";
-  static const String includeSpecialCharacters = "تضمين حروف خاصة";
-  static const String customWord = "مثال : mohammed";
+  // Main screen
+  static String facebook = "facebook".tr();
+  static String instagram = "instagram".tr();
+  static String tiktok = "tiktok".tr();
+  static String twitter = "twitter".tr();
+  static String youtube = "youtube".tr();
+  static String snapchat = "snapchat".tr();
 
-  static const String generate = "بدء توليد الاسم";
+  // Drawer
+  static String share = "share".tr();
+  static String privacy = "privacy".tr();
+  static String exit = "exit".tr();
+  static String rate = "rate".tr();
+  static String about = "about".tr();
+  static String saved = "saved".tr();
+  static String terms = "terms".tr();
 
-  /// result screen
-  static const String resultScreenTitle = "يوزرات لــ ";
-  static const String save = "حفظ";
-  static const String copy = "نسخ";
+  // Generator screen
+  static String enterCustomWord = "enterCustomWord".tr();
+  static String generateScreenTitle = "generateScreenTitle".tr();
+  static String usernameLength = "usernameLength".tr();
+  static String includeNumbers = "includeNumbers".tr();
+  static String includeSpecialCharacters = "includeSpecialCharacters".tr();
+  static String customWord = "customWord".tr();
+  static String generate = "generate".tr();
 
-  static const String usernameSaved = "تم حفظ اليوزر بنجاح";
-  static const String usernameCopied = "تم نسخ اليوزر بنجاح";
+  // Result screen
+  static String resultScreenTitle = "resultScreenTitle".tr();
+  static String save = "save".tr();
+  static String copy = "copy".tr();
+  static String usernameSaved = "usernameSaved".tr();
+  static String usernameCopied = "usernameCopied".tr();
+  static String errorHappened = "errorHappened".tr();
 
-  static const String errorHappened = "خدث خطأ ما";
+  // Saved screen
+  static String savedScreenTitle = "savedScreenTitle".tr();
+  static String noData = "noData".tr();
+  static String usernameRemoved = "usernameRemoved".tr();
+  static String remove = "remove".tr();
 
-  /// saved screen
-  static const String savedScreenTitle = "المحفوظات";
-  static const String noData = "لا يوجد بيانات متاحة";
-  static const String usernameRemoved = "تم حذف اليوزر بنجاح";
-  static const String remove = "حذف";
-
-  /// random strings for app
-  static const String notAccepted = "غير موافق";
-  static const String okay = "اوكي";
+  // Random strings for app
+  static String notAccepted = "notAccepted".tr();
+  static String okay = "okay".tr();
   static const String shareSubject = "";
   static const String shareMessage = "";
 

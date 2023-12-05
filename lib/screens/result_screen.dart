@@ -110,7 +110,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       ToastWidget.showToast(context: context, text: Config.usernameCopied);
                     },
                     icon: const Icon(Icons.content_copy),
-                    label: const Text(
+                    label:  Text(
                       Config.copy,
                       style: TextStyle(fontSize: 16),
                     ),
@@ -138,7 +138,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       }
                     },
                     icon: const Icon(Icons.save),
-                    label: const Text(
+                    label:  Text(
                       Config.save,
                       style: TextStyle(fontSize: 16),
                     ),

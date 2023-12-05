@@ -44,6 +44,7 @@ dependencies:
   in_app_review:
   share:
   loader_overlay: ^2.3.2
+  easy_localization: ^3.0.1
   flutter_markdown:
   webview_flutter:
   http:
@@ -73,6 +74,7 @@ flutter:
   assets:
      - assets/images/
      - assets/md/
+     - assets/translations/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

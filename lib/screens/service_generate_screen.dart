@@ -68,7 +68,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                 16.height,
                 adBanner(),
                 16.height,
-                const Text(
+                 Text(
                   Config.usernameLength,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
@@ -85,7 +85,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                     Text(
                       Config.includeNumbers,
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -101,7 +101,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                     Text(
                       Config.includeSpecialCharacters,
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -114,7 +114,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                 ),
                 if (selectedLength > 3) ...[
                   const SizedBox(height: 20),
-                  const Text(
+                   Text(
                     Config.enterCustomWord,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -191,7 +191,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                       color: Colors.white,
                     ),
                     // Add your desired icon
-                    label: const Text(
+                    label:  Text(
                       Config.generate,
                       style: TextStyle(fontSize: 18, color: Colors.white),
                       textAlign: TextAlign.center,

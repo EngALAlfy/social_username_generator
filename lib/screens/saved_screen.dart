@@ -26,10 +26,10 @@ class _SavedScreenState extends State<SavedScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(Config.savedScreenTitle),
+        title:  Text(Config.savedScreenTitle),
       ),
       body: saved == null || saved?.isEmpty == true
-          ? const Center(
+          ?  Center(
               child: Text(
                 Config.noData,
                 style: TextStyle(fontSize: 18),
@@ -112,7 +112,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     icon: const Icon(Icons.content_copy),
-                    label: const Text(
+                    label:  Text(
                       Config.copy,
                       style: TextStyle(fontSize: 16),
                     ),
@@ -151,7 +151,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       }
                     },
                     icon: const Icon(Icons.delete),
-                    label: const Text(
+                    label:  Text(
                       Config.remove,
                       style: TextStyle(fontSize: 16),
                     ),
