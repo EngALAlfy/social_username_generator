@@ -81,11 +81,11 @@ class SocialUsernameGeneratorScreenState
         color: Colors.lightBlue,
         child: Column(
           children: [
-            DrawerHeader(
-              margin: EdgeInsets.zero,
+            Container(
+              margin: const EdgeInsets.only(top: 30),
               padding: EdgeInsets.zero,
               child: SizedBox(
-                height: 200,
+                height: 150,
                 child: Image.asset("assets/images/logo.png" , height: 100,width: 100),
               ),
             ),
