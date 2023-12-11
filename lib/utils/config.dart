@@ -148,30 +148,30 @@ class Config {
   static String terms = "terms".tr();
 
   // Generator screen
-  static String enterCustomWord = "enterCustomWord".tr();
-  static String generateScreenTitle = "generateScreenTitle".tr();
-  static String usernameLength = "usernameLength".tr();
-  static String includeNumbers = "includeNumbers".tr();
-  static String includeSpecialCharacters = "includeSpecialCharacters".tr();
-  static String customWord = "customWord".tr();
+  static String enterCustomWord = "enter_custom_word".tr();
+  static String generateScreenTitle = "generate_screen_title".tr();
+  static String usernameLength = "username_length".tr();
+  static String includeNumbers = "include_numbers".tr();
+  static String includeSpecialCharacters = "include_special_characters".tr();
+  static String customWord = "custom_word".tr();
   static String generate = "generate".tr();
 
   // Result screen
-  static String resultScreenTitle = "resultScreenTitle".tr();
+  static String resultScreenTitle = "result_screen_title".tr();
   static String save = "save".tr();
   static String copy = "copy".tr();
-  static String usernameSaved = "usernameSaved".tr();
-  static String usernameCopied = "usernameCopied".tr();
-  static String errorHappened = "errorHappened".tr();
+  static String usernameSaved = "username_saved".tr();
+  static String usernameCopied = "username_copied".tr();
+  static String errorHappened = "error_happened".tr();
 
   // Saved screen
-  static String savedScreenTitle = "savedScreenTitle".tr();
-  static String noData = "noData".tr();
-  static String usernameRemoved = "usernameRemoved".tr();
+  static String savedScreenTitle = "saved_screen_title".tr();
+  static String noData = "no_data".tr();
+  static String usernameRemoved = "username_removed".tr();
   static String remove = "remove".tr();
 
   // Random strings for app
-  static String notAccepted = "notAccepted".tr();
+  static String notAccepted = "not_accepted".tr();
   static String okay = "okay".tr();
   static const String shareSubject = "";
   static const String shareMessage = "";
