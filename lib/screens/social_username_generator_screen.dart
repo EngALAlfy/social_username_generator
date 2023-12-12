@@ -1,4 +1,5 @@
 import 'package:auto_animated/auto_animated.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -22,7 +23,7 @@ class SocialUsernameGeneratorScreenState
     return DoublePressBackWidget(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(Config.appTitle),
+          title: Text(Config.appTitle.tr(context: context)),
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
@@ -66,7 +67,7 @@ class SocialUsernameGeneratorScreenState
             ),
             const SizedBox(height: 8.0),
             Text(
-              text,
+              text.tr(),
               style: TextStyle(color: color), // Set the button text color
             ),
           ],
@@ -125,7 +126,7 @@ class SocialUsernameGeneratorScreenState
         ).animate(animation),
         child: ListTile(
           title: Text(
-            title,
+            title.tr(),
             style:
                 const TextStyle(color: Colors.white), // Set the item text color
           ),

@@ -1,4 +1,5 @@
 import 'package:auto_animated/auto_animated.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:social_user_generator/utils/ads.dart';
@@ -26,12 +27,12 @@ class _SavedScreenState extends State<SavedScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:  Text(Config.savedScreenTitle),
+        title:  Text(Config.savedScreenTitle.tr()),
       ),
       body: saved == null || saved?.isEmpty == true
           ?  Center(
               child: Text(
-                Config.noData,
+                Config.noData.tr(),
                 style: TextStyle(fontSize: 18),
               ),
             )
@@ -108,12 +109,12 @@ class _SavedScreenState extends State<SavedScreen> {
                       if (!context.mounted) return;
                       ToastWidget.showToast(
                         context: context,
-                        text: Config.usernameCopied,
+                        text: Config.usernameCopied.tr(),
                       );
                     },
                     icon: const Icon(Icons.content_copy),
                     label:  Text(
-                      Config.copy,
+                      Config.copy.tr(),
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
@@ -139,20 +140,20 @@ class _SavedScreenState extends State<SavedScreen> {
                         if (!context.mounted) return;
                         ToastWidget.showToast(
                           context: context,
-                          text: Config.usernameRemoved,
+                          text: Config.usernameRemoved.tr(),
                         );
                       } catch (e) {
                         if (!context.mounted) return;
                         ToastWidget.showToast(
                           context: context,
-                          text: Config.errorHappened,
+                          text: Config.errorHappened.tr(),
                           type: ToastType.error,
                         );
                       }
                     },
                     icon: const Icon(Icons.delete),
                     label:  Text(
-                      Config.remove,
+                      Config.remove.tr(),
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(

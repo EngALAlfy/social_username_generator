@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:social_user_generator/screens/saved_screen.dart';
@@ -10,11 +11,12 @@ import 'package:social_user_generator/utils/share_app.dart';
 
 class Config {
   /// API secret passphrase
-  static const String apiSecret = "ajksd4nakDFSsjndjDF4Skan%as643Dfg64cs4adsDF86ks,4slSFH";
+  static const String apiSecret =
+      "ajksd4nakDFSsjndjDF4Skan%as643Dfg64cs4adsDF86ks,4slSFH";
   static String baseApiUrl = "https://social-generate.almorbeh.com/api";
 
   /// Strings in the app
-  static String appTitle = "app_title".tr();
+  static String appTitle = "app_title";
 
   /// lists
   static List<Map<String, dynamic>> drawerItems = [
@@ -83,6 +85,15 @@ class Config {
       },
     },
     {
+      'title': Config.lang,
+      'icon': FontAwesomeIcons.language,
+      'callback': (BuildContext context) async {
+        var locale = context.locale.languageCode == "en" ? "ar" : "en";
+        await context.setLocale(Locale(locale));
+        Phoenix.rebirth(context);
+      },
+    },
+    {
       'title': Config.exit,
       'icon': Icons.exit_to_app,
       'callback': (BuildContext context) {
@@ -131,49 +142,49 @@ class Config {
   ];
 
   // Main screen
-  static String facebook = "facebook".tr();
-  static String instagram = "instagram".tr();
-  static String tiktok = "tiktok".tr();
-  static String twitter = "twitter".tr();
-  static String youtube = "youtube".tr();
-  static String snapchat = "snapchat".tr();
+  static String facebook = "facebook";
+  static String instagram = "instagram";
+  static String tiktok = "tiktok";
+  static String twitter = "twitter";
+  static String youtube = "youtube";
+  static String snapchat = "snapchat";
 
   // Drawer
-  static String share = "share".tr();
-  static String privacy = "privacy".tr();
-  static String exit = "exit".tr();
-  static String rate = "rate".tr();
-  static String about = "about".tr();
-  static String saved = "saved".tr();
-  static String terms = "terms".tr();
+  static String share = "share";
+  static String privacy = "privacy";
+  static String exit = "exit";
+  static String rate = "rate";
+  static String about = "about";
+  static String saved = "saved";
+  static String terms = "terms";
 
   // Generator screen
-  static String enterCustomWord = "enter_custom_word".tr();
-  static String generateScreenTitle = "generate_screen_title".tr();
-  static String usernameLength = "username_length".tr();
-  static String includeNumbers = "include_numbers".tr();
-  static String includeSpecialCharacters = "include_special_characters".tr();
-  static String customWord = "custom_word".tr();
-  static String generate = "generate".tr();
+  static String enterCustomWord = "enter_custom_word";
+  static String generateScreenTitle = "generate_screen_title";
+  static String usernameLength = "username_length";
+  static String includeNumbers = "include_numbers";
+  static String includeSpecialCharacters = "include_special_characters";
+  static String customWord = "custom_word";
+  static String generate = "generate";
 
   // Result screen
-  static String resultScreenTitle = "result_screen_title".tr();
-  static String save = "save".tr();
-  static String copy = "copy".tr();
-  static String usernameSaved = "username_saved".tr();
-  static String usernameCopied = "username_copied".tr();
-  static String errorHappened = "error_happened".tr();
+  static String resultScreenTitle = "result_screen_title";
+  static String save = "save";
+  static String copy = "copy";
+  static String usernameSaved = "username_saved";
+  static String usernameCopied = "username_copied";
+  static String errorHappened = "error_happened";
 
   // Saved screen
-  static String savedScreenTitle = "saved_screen_title".tr();
-  static String noData = "no_data".tr();
-  static String usernameRemoved = "username_removed".tr();
-  static String remove = "remove".tr();
+  static String savedScreenTitle = "saved_screen_title";
+  static String noData = "no_data";
+  static String usernameRemoved = "username_removed";
+  static String remove = "remove";
 
   // Random strings for app
-  static String notAccepted = "not_accepted".tr();
-  static String okay = "okay".tr();
+  static String notAccepted = "not_accepted";
+  static String okay = "okay";
+  static String lang = "lang";
   static const String shareSubject = "";
   static const String shareMessage = "";
-
 }

@@ -1,4 +1,5 @@
 import 'package:auto_animated/auto_animated.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:social_user_generator/utils/ads.dart';
@@ -21,7 +22,7 @@ class _ResultScreenState extends State<ResultScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("${Config.resultScreenTitle} ${widget.service.toUpperCase()}"),
+        title: Text("${Config.resultScreenTitle.tr()} ${widget.service.toUpperCase().tr()}"),
       ),
       body: LiveList(
         separatorBuilder: (context, index) {
@@ -107,11 +108,11 @@ class _ResultScreenState extends State<ResultScreen> {
                     onPressed: () async {
                       await username.keys.first.copyToClipboard();
                       if (!context.mounted) return;
-                      ToastWidget.showToast(context: context, text: Config.usernameCopied);
+                      ToastWidget.showToast(context: context, text: Config.usernameCopied.tr());
                     },
                     icon: const Icon(Icons.content_copy),
                     label:  Text(
-                      Config.copy,
+                      Config.copy.tr(),
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
@@ -131,15 +132,15 @@ class _ResultScreenState extends State<ResultScreen> {
                         usernames = usernames.toSet().toList();
                         await setValue("usernames" , usernames);
                         if (!context.mounted) return;
-                        ToastWidget.showToast(context: context, text: Config.usernameSaved);
+                        ToastWidget.showToast(context: context, text: Config.usernameSaved.tr());
                       }catch(e){
                         if (!context.mounted) return;
-                        ToastWidget.showToast(context: context, text: Config.errorHappened,type: ToastType.error);
+                        ToastWidget.showToast(context: context, text: Config.errorHappened.tr(),type: ToastType.error);
                       }
                     },
                     icon: const Icon(Icons.save),
                     label:  Text(
-                      Config.save,
+                      Config.save.tr(),
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(

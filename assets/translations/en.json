@@ -1,5 +1,5 @@
 {
-  "app_title": "Your App Title",
+  "app_title": "Instagram username ideas",
   "facebook": "Facebook",
   "instagram": "Instagram",
   "tiktok": "TikTok",
@@ -31,5 +31,6 @@
   "username_removed": "Username removed successfully",
   "remove": "Remove",
   "not_accepted": "Not Accepted",
-  "okay": "Okay"
+  "okay": "Okay",
+  "lang": "عربي"
 }

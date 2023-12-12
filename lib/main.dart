@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -11,14 +12,14 @@ Future<void> main() async {
   await Future.wait([
     MobileAds.instance.initialize(),
     initialize(),
-    EasyLocalization.ensureInitialized(),
-  // ApiService.instance.init(),
+    // ApiService.instance.init(),
   ]);
-  runApp(
-    EasyLocalization(
-        supportedLocales: const [Locale('en', ''), Locale('ar', '')],
-        path: 'assets/translations',
-        child: const SocialUsernameGeneratorApp()),
+  await EasyLocalization.ensureInitialized();
+  runApp( EasyLocalization(
+          supportedLocales: [Locale('en'), Locale('ar')],
+          path: 'assets/translations',
+          child: Phoenix(child: SocialUsernameGeneratorApp()),
+  )
   );
 }
 

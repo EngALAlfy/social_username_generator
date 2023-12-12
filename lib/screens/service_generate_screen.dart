@@ -1,7 +1,8 @@
 import 'dart:math';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' as ui;
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:social_user_generator/screens/result_screen.dart';
@@ -57,7 +58,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-              "${Config.generateScreenTitle} ${widget.service.toUpperCase()}"),
+              "${Config.generateScreenTitle.tr()} ${widget.service.toUpperCase().tr()}"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -69,7 +70,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                 adBanner(),
                 16.height,
                  Text(
-                  Config.usernameLength,
+                  Config.usernameLength.tr(),
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Slider(
@@ -86,7 +87,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                      Text(
-                      Config.includeNumbers,
+                      Config.includeNumbers.tr(),
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -102,7 +103,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                      Text(
-                      Config.includeSpecialCharacters,
+                      Config.includeSpecialCharacters.tr(),
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -115,7 +116,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                 if (selectedLength > 3) ...[
                   const SizedBox(height: 20),
                    Text(
-                    Config.enterCustomWord,
+                    Config.enterCustomWord.tr(),
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
@@ -124,16 +125,16 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                       autofocus: false,
                       maxLength: selectedLength <= 3 ? 2 : selectedLength - 3,
                       maxLines: 1,
-                      textDirection: TextDirection.ltr,
+                      textDirection: ui.TextDirection.ltr,
                       textAlign: TextAlign.left,
                       onChanged: _onCustomWordChanged,
                       inputFormatters: [
-                        FilteringTextInputFormatter.deny(RegExp(r'[^a-zA-Z]')),
+                        ui.FilteringTextInputFormatter.deny(RegExp(r'[^a-zA-Z]')),
                       ],
                       style: const TextStyle(fontSize: 16, color: Colors.black),
                       // Set font size and color
                       decoration: InputDecoration(
-                        hintText: Config.customWord,
+                        hintText: Config.customWord.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           // Set border radius
@@ -192,7 +193,7 @@ class _ServiceGenerateScreenState extends State<ServiceGenerateScreen> {
                     ),
                     // Add your desired icon
                     label:  Text(
-                      Config.generate,
+                      Config.generate.tr(),
                       style: TextStyle(fontSize: 18, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
