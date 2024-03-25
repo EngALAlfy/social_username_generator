@@ -16,7 +16,7 @@ Future<void> main() async {
   ]);
   await EasyLocalization.ensureInitialized();
   runApp( EasyLocalization(
-          supportedLocales: [Locale('en'), Locale('ar')],
+          supportedLocales: [Locale('ar')],
           path: 'assets/translations',
           child: Phoenix(child: SocialUsernameGeneratorApp()),
   )

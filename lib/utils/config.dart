@@ -85,15 +85,6 @@ class Config {
       },
     },
     {
-      'title': Config.lang,
-      'icon': FontAwesomeIcons.language,
-      'callback': (BuildContext context) async {
-        var locale = context.locale.languageCode == "en" ? "ar" : "en";
-        await context.setLocale(Locale(locale));
-        Phoenix.rebirth(context);
-      },
-    },
-    {
       'title': Config.exit,
       'icon': Icons.exit_to_app,
       'callback': (BuildContext context) {
