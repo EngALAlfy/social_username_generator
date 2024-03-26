@@ -119,7 +119,7 @@ class Config {
       "icon": FontAwesomeIcons.youtube,
     },
     {
-      "name": "instagram",
+      "name": "insta",
       "title": Config.instagram,
       "color": Colors.purple,
       "icon": FontAwesomeIcons.instagram,

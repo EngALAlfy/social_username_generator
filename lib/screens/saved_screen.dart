@@ -118,7 +118,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.green,
+                      backgroundColor: Colors.green,
                     ),
                   ),
                 ),
@@ -157,7 +157,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.red,
+                      backgroundColor: Colors.red,
                     ),
                   ),
                 ),

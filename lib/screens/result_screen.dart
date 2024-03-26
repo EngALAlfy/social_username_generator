@@ -116,7 +116,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.green,
+                      backgroundColor: Colors.green,
                     ),
                   ),
                 ),
@@ -144,7 +144,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       style: TextStyle(fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      backgroundColor: Colors.blue,
                     ),
                   ),
                 ),
