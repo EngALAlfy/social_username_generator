@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:social_user_generator/generated/assets.dart';
 import 'package:social_user_generator/screens/service_generate_screen.dart';
 import 'package:social_user_generator/utils/ads.dart';
 import 'package:social_user_generator/utils/config.dart';
@@ -87,7 +88,7 @@ class SocialUsernameGeneratorScreenState
               padding: EdgeInsets.zero,
               child: SizedBox(
                 height: 150,
-                child: Image.asset("assets/images/logo.png" , height: 100,width: 100),
+                child: Image.asset(Assets.imagesLogo , height: 100,width: 100),
               ),
             ),
             const Divider(thickness: 1.5,endIndent: 20,indent: 20),
